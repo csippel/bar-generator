@@ -14,9 +14,9 @@ $progress = (empty($_GET['progress']) ? 0         : $_GET['progress']);
 $image = imagecreatetruecolor($width, $height); 
 
 $backgroundcolor = imagecolorallocate($image, 255, 255, 255);
-$bordercolor = imagecolorallocate($image, 230, 67, 97);
-$barcolor = imagecolorallocate($image, 239, 135, 154);
-$textcolor = imagecolorallocate($image, 230, 67, 97);
+$bordercolor     = imagecolorallocate($image, 230,  67,  97);
+$barcolor        = imagecolorallocate($image, 239, 135, 154);
+$textcolor       = imagecolorallocate($image, 230,  67,  97);
 
 // calculate the progress
 if ($_GET['progress'] > 100 || is_numeric($_GET['progress']) != true) {
