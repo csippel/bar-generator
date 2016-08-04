@@ -19,14 +19,12 @@ $barcolor        = imagecolorallocate($image, 239, 135, 154);
 $textcolor       = imagecolorallocate($image, 230,  67,  97);
 
 // calculate the progress
-if ($_GET['progress'] > 100 || is_numeric($_GET['progress']) != true) {
-    return false;
+if ($progress > 100) {
+    $progress = 100;
 }
 $progressabsolute = ($width * $progress) / 100;
 
 // background 
-imagefill($image, 0, 0, $bordercolor);
-// border
 imagefilledrectangle($image, 2, 2, $width - 3, $height - 3, $backgroundcolor);
 // bar
 imagefilledrectangle($image, 2, 2, $progressabsolute, $height - 3, $barcolor);
@@ -39,4 +37,3 @@ header('Content-type: image/png');
 
 imagepng($image); 
 imagedestroy($image); 
-?>
